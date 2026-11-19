@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradRed3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EE0033"/>
+      <stop offset="100%" stop-color="#B30026"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="#FAFAFA" rx="16"/>
+  <!-- POS Monitor -->
+  <rect x="90" y="40" width="180" height="115" rx="10" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  <rect x="100" y="50" width="160" height="95" rx="6" fill="#FFFFFF"/>
+  <!-- Screen UI -->
+  <rect x="106" y="56" width="148" height="18" fill="url(#gradRed3)" rx="3"/>
+  <!-- Product Grid on screen -->
+  <rect x="106" y="80" width="40" height="30" rx="4" fill="#FFF0F2" stroke="#EE0033" stroke-width="1"/>
+  <rect x="152" y="80" width="40" height="30" rx="4" fill="#F3F4F6"/>
+  <rect x="198" y="80" width="40" height="30" rx="4" fill="#F3F4F6"/>
+  <rect x="106" y="116" width="132" height="20" rx="4" fill="#F9FAFB"/>
+  <rect x="195" y="120" width="38" height="12" rx="3" fill="url(#gradRed3)"/>
+  <!-- Monitor Stand -->
+  <rect x="165" y="155" width="30" height="25" fill="#64748B"/>
+  <rect x="135" y="180" width="90" height="12" rx="6" fill="#334155"/>
+  <!-- Cashier Receipt Printer -->
+  <rect x="285" y="115" width="65" height="65" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="295" y="125" width="45" height="4" rx="2" fill="#EE0033"/>
+  <path d="M297 100 L337 100 L337 125 L297 125 Z" fill="#FFF0F2" stroke="#EE0033" stroke-width="1" stroke-dasharray="2,2"/>
+  <circle cx="335" cy="155" r="4" fill="#10B981"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradRed6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EE0033"/>
+      <stop offset="100%" stop-color="#B30026"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="#FAFAFA" rx="16"/>
+  <!-- Tablet Device -->
+  <rect x="75" y="35" width="150" height="170" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="85" y="45" width="130" height="150" rx="8" fill="#FFF0F2"/>
+  <!-- Stethoscope / Medical Hospital Cross -->
+  <circle cx="150" cy="85" r="22" fill="url(#gradRed6)"/>
+  <path d="M150 73 L150 97 M138 85 L162 85" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <rect x="105" y="120" width="90" height="8" rx="4" fill="#FFFFFF"/>
+  <rect x="105" y="135" width="65" height="8" rx="4" fill="#FFFFFF"/>
+  <!-- Education Graduation Book / SMAS -->
+  <rect x="235" y="60" width="115" height="135" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <path d="M245 75 L292 65 L339 75 L292 88 Z" fill="url(#gradRed6)"/>
+  <rect x="255" y="110" width="75" height="8" rx="4" fill="#F3F4F6"/>
+  <rect x="255" y="125" width="55" height="8" rx="4" fill="#F3F4F6"/>
+  <rect x="255" y="145" width="70" height="18" rx="4" fill="url(#gradRed6)"/>
+</svg>

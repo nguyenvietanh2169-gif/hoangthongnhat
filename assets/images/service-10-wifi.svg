@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradRed10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EE0033"/>
+      <stop offset="100%" stop-color="#B30026"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#FAFAFA" rx="16"/>
+  <!-- Modern Router Body -->
+  <rect x="90" y="145" width="220" height="55" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <!-- Router Status LED Lights -->
+  <circle cx="120" cy="172" r="4" fill="#EE0033"/>
+  <circle cx="140" cy="172" r="4" fill="#EE0033"/>
+  <circle cx="160" cy="172" r="4" fill="#EE0033"/>
+  <circle cx="180" cy="172" r="4" fill="#10B981"/>
+  <rect x="230" y="166" width="60" height="12" rx="6" fill="url(#gradRed10)"/>
+  <text x="260" y="175" font-family="sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5G MESH</text>
+  <!-- Antennas -->
+  <rect x="110" y="80" width="8" height="65" rx="4" fill="#1E2937" transform="rotate(-12 114 145)"/>
+  <rect x="155" y="70" width="8" height="75" rx="4" fill="#1E2937"/>
+  <rect x="235" y="70" width="8" height="75" rx="4" fill="#1E2937"/>
+  <rect x="280" y="80" width="8" height="65" rx="4" fill="#1E2937" transform="rotate(12 284 145)"/>
+  <!-- WiFi Signal Radio Waves in Red (perfect vertical alignment & margins) -->
+  <path d="M175 50 A30 30 0 0 1 225 50" stroke="#EE0033" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M165 38 A45 45 0 0 1 235 38" stroke="#EE0033" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M155 26 A60 60 0 0 1 245 26" stroke="#EE0033" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.3"/>
+</svg>

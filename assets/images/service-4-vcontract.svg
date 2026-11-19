@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradRed4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EE0033"/>
+      <stop offset="100%" stop-color="#B30026"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="#FAFAFA" rx="16"/>
+  <!-- Dual Contract Documents overlapping -->
+  <rect x="80" y="45" width="160" height="145" rx="10" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1.5" transform="rotate(-4 160 117)"/>
+  <rect x="120" y="35" width="170" height="165" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <!-- Header line -->
+  <rect x="145" y="55" width="70" height="10" rx="3" fill="url(#gradRed4)"/>
+  <circle cx="260" cy="60" r="6" fill="#FFF0F2" stroke="#EE0033" stroke-width="2"/>
+  <!-- Lines of contract -->
+  <rect x="145" y="78" width="120" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="145" y="92" width="105" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="145" y="106" width="115" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="145" y="120" width="80" height="6" rx="3" fill="#E5E7EB"/>
+  <!-- Electronic Signatures of Two Parties -->
+  <rect x="140" y="145" width="60" height="35" rx="6" fill="#FFF0F2" stroke="#EE0033" stroke-width="1"/>
+  <path d="M145 168 Q155 152 165 165 T185 162" stroke="#EE0033" stroke-width="2.5" fill="none"/>
+  <rect x="215" y="145" width="60" height="35" rx="6" fill="#FFF0F2" stroke="#EE0033" stroke-width="1"/>
+  <circle cx="245" cy="162" r="10" fill="#EE0033" opacity="0.15"/>
+  <path d="M238 162 L243 167 L253 157" stroke="#EE0033" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
