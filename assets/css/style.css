@@ -56,6 +56,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -64,6 +66,9 @@ body {
   background-color: var(--bg-page);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 a {
@@ -155,6 +160,26 @@ img {
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+}
+
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.hotline-prefix {
+  display: inline;
 }
 
 .brand-symbol {
@@ -1623,44 +1648,313 @@ img {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header & Navbar */
+  .navbar {
+    height: 64px;
+  }
+  .nav-container {
+    height: 64px;
+  }
+  .navbar-logo-img {
+    height: 28px;
+    max-width: 190px;
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-hotline {
+    padding: 7px 13px;
+    font-size: 0.82rem;
+  }
+  .hotline-prefix {
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 1.35rem;
+  }
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 64px;
     left: 0;
     right: 0;
     background: #ffffff;
     flex-direction: column;
-    padding: 24px;
+    padding: 20px 16px;
     border-bottom: 1px solid var(--gray-200);
     display: none;
-    gap: 16px;
+    gap: 14px;
+    box-shadow: var(--shadow-md);
   }
   .nav-menu.open {
     display: flex;
   }
-  .hamburger-btn {
-    display: block;
+
+  /* Hero Section */
+  .hero-section {
+    padding: 32px 0 40px;
   }
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .hero-slogan-box {
+    padding: 10px 14px;
+    margin-bottom: 16px;
+  }
+  .hero-slogan-text {
+    font-size: 0.95rem;
+  }
+  .hero-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
   .hero-bullet-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .hero-bullet-item {
+    font-size: 0.88rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .btn-primary-large, .btn-outline-large {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+  }
+  .hero-profile-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .profile-name {
+    font-size: 1.25rem;
+  }
+  .profile-actions {
+    gap: 8px;
+  }
+  .profile-call-btn, .profile-zalo-btn {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+
+  /* Stats Trust Bar (Fix 2x2 grid on mobile) */
+  .stats-bar {
+    padding: 20px 0;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
+  }
+  .stat-item {
+    padding: 8px 6px;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid var(--gray-200);
+  }
+  .stat-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  .stat-number {
+    font-size: 1.85rem;
+    line-height: 1.15;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    margin-top: 4px;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 48px 0;
+  }
+  .services-filter-tabs {
+    gap: 8px;
+    margin: 20px 0 28px;
+  }
+  .filter-tab {
+    padding: 8px 14px;
+    font-size: 0.84rem;
   }
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .service-body {
+    padding: 18px;
+  }
+  .service-title {
+    font-size: 1.15rem;
+  }
+  .service-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Combos Section */
+  .combos-section {
+    padding: 48px 0;
+  }
+  .combos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .combo-card {
+    padding: 24px 16px;
+  }
+
+  /* Pricing Calculator */
+  .calc-section {
+    padding: 48px 0;
+  }
+  .calc-container {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+    margin-top: 24px;
+  }
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .calc-service-item {
+    padding: 12px 10px;
+  }
+  .calc-summary-card {
+    padding: 20px 16px;
+    position: static;
+  }
+  .calc-total-amount {
+    font-size: 1.85rem;
+  }
+
+  /* Steps & Testimonials */
+  .steps-section, .testimonials-section {
+    padding: 48px 0;
   }
   .steps-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .footer-grid {
+  .step-card {
+    padding: 20px 16px;
+  }
+  .testimonials-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .testimonial-card {
+    padding: 20px 16px;
+  }
+
+  /* FAQ & Contact */
+  .faq-section, .contact-section {
+    padding: 48px 0;
+  }
+  .contact-box {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius-lg);
+  }
+  .contact-info-panel, .contact-form-panel {
+    padding: 24px 16px;
+    border-right: none;
   }
   .form-row {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .contact-info-panel, .contact-form-panel {
-    padding: 28px 20px;
-    border-right: none;
+
+  /* Footer */
+  .footer {
+    padding: 44px 0 24px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .footer-logo-img {
+    height: 30px;
+    max-width: 200px;
+  }
+
+  /* Floating Action Buttons */
+  .floating-actions {
+    bottom: 14px;
+    right: 12px;
+    gap: 8px;
+  }
+  .float-btn {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+  .back-to-top {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 24px 16px;
+    max-width: 92%;
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.55rem;
+  }
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  .floating-actions {
+    bottom: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+  .float-btn {
+    padding: 6px 11px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0 12px;
+  }
+  .navbar-logo-img {
+    height: 24px;
+    max-width: 160px;
+  }
+  .btn-hotline {
+    padding: 5px 9px;
+    font-size: 0.74rem;
   }
 }
