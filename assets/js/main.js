@@ -1,11 +1,13 @@
 /**
- * VIETTEL TAMMII - Main JavaScript
- * Interactive Logic for Viettel Telecom Solutions Landing Page
+ * HOÀNG THỐNG NHẤT - HỆ SINH THÁI GIẢI PHÁP DOANH NGHIỆP & HỘ KINH DOANH
+ * Chuyên viên: Trương Phước Hoàng (Viettel Đồng Nai)
+ * Hotline/Zalo: 08 1789 1789 - Email: hoangtp2@viettel.com.vn / cskhVietteldni@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initServiceFilter();
+  initPricingTabs();
   initCalculator();
   initFaqAccordion();
   initConsultationModal();
@@ -33,7 +35,6 @@ function initNavbar() {
   if (hamburgerBtn && navMenu) {
     hamburgerBtn.addEventListener('click', () => {
       navMenu.classList.toggle('open');
-      const icon = hamburgerBtn.querySelector('i') || hamburgerBtn;
       if (navMenu.classList.contains('open')) {
         hamburgerBtn.innerHTML = '✕';
       } else {
@@ -63,7 +64,7 @@ function initServiceFilter() {
       const filterValue = tab.getAttribute('data-filter');
 
       serviceCards.forEach(card => {
-        const category = card.getAttribute('data-category');
+        const category = card.getAttribute('data-category') || '';
         if (filterValue === 'all' || category.includes(filterValue)) {
           card.style.display = 'flex';
           card.style.animation = 'fadeIn 0.4s ease';
@@ -75,20 +76,27 @@ function initServiceFilter() {
   });
 }
 
-/* ================= 3. INTERACTIVE CALCULATOR ================= */
-const SERVICES_DATA = [
-  { id: 'ca', name: 'Chữ ký số Viettel-CA (Từ 864k/Năm)', price: 864000, category: 'dn,hkd' },
-  { id: 'sinvoice', name: 'Hóa đơn điện tử S-Invoice (300 số)', price: 162000, category: 'dn,hkd' },
-  { id: 'tendoo', name: 'Phần mềm bán hàng Tendoo (1 Tháng)', price: 162000, category: 'hkd,dn' },
-  { id: 'vcontract', name: 'Hợp đồng điện tử vContract (100 HĐ)', price: 950000, category: 'dn' },
-  { id: 'vbhxh', name: 'Phần mềm BHXH Viettel (18 Tháng)', price: 550000, category: 'dn' },
-  { id: 'yte-gd', name: 'Phần mềm Y tế - Giáo dục (SMAS/HIS)', price: 2500000, category: 'dn' },
-  { id: 'ketoan-hkd', name: 'Kế toán & Kê khai thuế HKD (Quý)', price: 1500000, category: 'hkd' },
-  { id: 'gpkd', name: 'Đăng ký GPKD trọn gói (Tặng khai thuế)', price: 1500000, category: 'hkd,dn' },
-  { id: 'sim-dep', name: 'Sim Viettel số đẹp (Hotline VIP)', price: 1200000, category: 'dn,hkd' },
-  { id: 'wifi-5g', name: 'WiFi & Thiết bị phát (Từ 195k/Tháng)', price: 195000, category: 'dn,hkd' }
-];
+/* ================= 3. OFFICIAL PRICING TABS ================= */
+function initPricingTabs() {
+  const tabs = document.querySelectorAll('.pricing-tab-btn');
+  const panes = document.querySelectorAll('.pricing-tab-pane');
 
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const targetId = tab.getAttribute('data-target');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+}
+
+/* ================= 4. INTERACTIVE CALCULATOR ================= */
 function initCalculator() {
   const calcItems = document.querySelectorAll('.calc-service-item');
   const selectedList = document.getElementById('calcSelectedList');
@@ -105,9 +113,9 @@ function initCalculator() {
 
     calcItems.forEach(item => {
       const checkbox = item.querySelector('.calc-checkbox');
-      if (checkbox.checked) {
+      if (checkbox && checkbox.checked) {
         item.classList.add('selected');
-        const price = parseInt(item.getAttribute('data-price'), 10);
+        const price = parseInt(item.getAttribute('data-price'), 10) || 0;
         const name = item.getAttribute('data-name');
         subtotal += price;
         selectedServices.push({ name, price });
@@ -116,7 +124,7 @@ function initCalculator() {
       }
     });
 
-    // Discount tiers
+    // Combo discounts
     let discountPercent = 0;
     if (selectedServices.length === 2) {
       discountPercent = 0.10; // 10%
@@ -150,7 +158,7 @@ function initCalculator() {
     item.addEventListener('click', (e) => {
       if (e.target.tagName !== 'INPUT') {
         const cb = item.querySelector('.calc-checkbox');
-        cb.checked = !cb.checked;
+        if (cb) cb.checked = !cb.checked;
       }
       updateCalculator();
     });
@@ -182,37 +190,47 @@ function formatCurrency(number) {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(number);
 }
 
-/* ================= 4. FAQ ACCORDION ================= */
+/* ================= 5. FAQ ACCORDION ================= */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
-    questionBtn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
+    if (questionBtn) {
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
   });
 }
 
-/* ================= 5. CONSULTATION MODAL ================= */
+/* ================= 6. CONSULTATION MODAL ================= */
 function initConsultationModal() {
   const modal = document.getElementById('consultModal');
-  const closeBtn = document.querySelector('.modal-close-btn');
+  const closeBtn = document.querySelector('.modal-close');
   const consultTriggers = document.querySelectorAll('.btn-consult-trigger');
-
-  if (!modal) return;
+  const serviceSelect = document.getElementById('modalServiceSelect');
 
   consultTriggers.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const serviceName = btn.getAttribute('data-service');
-      const serviceSelect = document.getElementById('modalServiceSelect');
-      if (serviceName && serviceSelect) {
-        serviceSelect.value = serviceName;
+      if (serviceSelect && serviceName) {
+        let found = false;
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value === serviceName || serviceSelect.options[i].text.includes(serviceName)) {
+            serviceSelect.selectedIndex = i;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          serviceSelect.value = serviceName;
+        }
       }
       openModal();
     });
@@ -222,14 +240,16 @@ function initConsultationModal() {
     closeBtn.addEventListener('click', closeModal);
   }
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
       closeModal();
     }
   });
@@ -251,7 +271,7 @@ function closeModal() {
   }
 }
 
-/* ================= 6. FORM SUBMISSIONS ================= */
+/* ================= 7. FORM SUBMISSIONS ================= */
 function initFormSubmit() {
   const contactForm = document.getElementById('mainContactForm');
   const modalForm = document.getElementById('modalContactForm');
@@ -279,13 +299,12 @@ function handleFormSubmit(form) {
   submitBtn.disabled = true;
   submitBtn.innerHTML = 'Đang gửi thông tin...';
 
-  // Simulate fast network dispatch
   setTimeout(() => {
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalText;
     form.reset();
 
-    showToast('✓ Cảm ơn bạn! Trương Phước Hoàng đã tiếp nhận thông tin và sẽ gọi lại trong 5 phút!');
+    showToast('✓ Cảm ơn bạn! Trương Phước Hoàng đã tiếp nhận thông tin và sẽ liên hệ trong 5 phút!');
   }, 700);
 }
 
@@ -304,7 +323,7 @@ function showToast(message) {
   }, 4500);
 }
 
-/* ================= 7. BACK TO TOP ================= */
+/* ================= 8. BACK TO TOP ================= */
 function initBackToTop() {
   const backToTopBtn = document.querySelector('.back-to-top');
   if (!backToTopBtn) return;
