@@ -1,6 +1,6 @@
 /**
  * HOÀNG THỐNG NHẤT - HỆ SINH THÁI GIẢI PHÁP DOANH NGHIỆP & HỘ KINH DOANH
- * Chuyên viên: Trương Phước Hoàng (Viettel Đồng Nai)
+ * Chuyên viên: Hoàng Thống Nhất (Viettel Đồng Nai)
  * Hotline/Zalo: 08 1789 1789 - Email: hoangtp2@viettel.com.vn / cskhVietteldni@gmail.com
  */
 
@@ -304,7 +304,7 @@ function handleFormSubmit(form) {
     submitBtn.innerHTML = originalText;
     form.reset();
 
-    showToast('✓ Cảm ơn bạn! Trương Phước Hoàng đã tiếp nhận thông tin và sẽ liên hệ trong 5 phút!');
+    showToast('✓ Cảm ơn bạn! Hoàng Thống Nhất đã tiếp nhận thông tin và sẽ liên hệ trong 5 phút!');
   }, 700);
 }
 

@@ -1,6 +1,6 @@
 # Viettel Tammii - Website Hệ Sinh Thái Giải Pháp Doanh Nghiệp & Hộ Kinh Doanh
 
-Dự án website chuyên nghiệp được phát triển dựa trên poster dịch vụ của **Trương Phước Hoàng - Viettel Tammii**, tham khảo phong cách thiết kế hiện đại của [Viettel Telecom (vietteltelecom.vn)](https://vietteltelecom.vn/vx/).
+Dự án website chuyên nghiệp được phát triển dựa trên poster dịch vụ của **Hoàng Thống Nhất - Viettel Tammii**, tham khảo phong cách thiết kế hiện đại của [Viettel Telecom (vietteltelecom.vn)](https://vietteltelecom.vn/vx/).
 
 ---
 
@@ -64,6 +64,6 @@ Website được xây dựng bằng công nghệ thuần (HTML5, CSS3, Vanilla J
 ---
 
 ## 📞 Thông tin người đại diện trên Website
-- **Chuyên viên:** Trương Phước Hoàng
+- **Chuyên viên:** Hoàng Thống Nhất
 - **Hotline / Zalo:** `08 1789 1789`
 - **Slogan:** *"Kết nối mọi ngày, mình chuyển sang tammii nhé!"*
