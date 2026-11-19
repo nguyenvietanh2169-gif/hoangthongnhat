@@ -77,16 +77,16 @@ function initServiceFilter() {
 
 /* ================= 3. INTERACTIVE CALCULATOR ================= */
 const SERVICES_DATA = [
-  { id: 'ca', name: 'Chữ ký số Viettel-CA (1 Năm)', price: 1200000, category: 'dn,hkd' },
-  { id: 'sinvoice', name: 'Hóa đơn điện tử S-Invoice (500 số)', price: 850000, category: 'dn,hkd' },
-  { id: 'tendoo', name: 'Phần mềm bán hàng Tendoo (1 Năm)', price: 1800000, category: 'hkd,dn' },
+  { id: 'ca', name: 'Chữ ký số Viettel-CA (Từ 864k/Năm)', price: 864000, category: 'dn,hkd' },
+  { id: 'sinvoice', name: 'Hóa đơn điện tử S-Invoice (300 số)', price: 162000, category: 'dn,hkd' },
+  { id: 'tendoo', name: 'Phần mềm bán hàng Tendoo (1 Tháng)', price: 162000, category: 'hkd,dn' },
   { id: 'vcontract', name: 'Hợp đồng điện tử vContract (100 HĐ)', price: 950000, category: 'dn' },
-  { id: 'vbhxh', name: 'Phần mềm Kê khai BHXH (1 Năm)', price: 790000, category: 'dn' },
+  { id: 'vbhxh', name: 'Phần mềm BHXH Viettel (18 Tháng)', price: 550000, category: 'dn' },
   { id: 'yte-gd', name: 'Phần mềm Y tế - Giáo dục (SMAS/HIS)', price: 2500000, category: 'dn' },
   { id: 'ketoan-hkd', name: 'Kế toán & Kê khai thuế HKD (Quý)', price: 1500000, category: 'hkd' },
-  { id: 'gpkd', name: 'Hỗ trợ Đăng ký Giấy phép KD trọn gói', price: 990000, category: 'hkd,dn' },
+  { id: 'gpkd', name: 'Đăng ký GPKD trọn gói (Tặng khai thuế)', price: 1500000, category: 'hkd,dn' },
   { id: 'sim-dep', name: 'Sim Viettel số đẹp (Hotline VIP)', price: 1200000, category: 'dn,hkd' },
-  { id: 'wifi-5g', name: 'Internet Cáp quang & WiFi 4G-5G Doanh nghiệp', price: 350000, category: 'dn,hkd' }
+  { id: 'wifi-5g', name: 'WiFi & Thiết bị phát (Từ 195k/Tháng)', price: 195000, category: 'dn,hkd' }
 ];
 
 function initCalculator() {
